@@ -29,12 +29,15 @@ Array.from(navLinks).forEach(link => {
   link.addEventListener("mouseover", () => {
       event.target.style.backgroundColor = "red";
       event.target.style.color = "green";
+      event.preventDefault();
   });
 
   link.addEventListener("mouseleave", () => {
       event.target.style.backgroundColor = "white";
       event.target.style.color = "black";
   });
+
+
 });
 
 
@@ -61,6 +64,7 @@ Array.from(home).forEach(div => {
 
     div.addEventListener("wheel", () => {
         event.target.style.backgroundColor = randomColor;
+        event.stopPropagation;
     });
 
     div.addEventListener("mouseout", () => {
